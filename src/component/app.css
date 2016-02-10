@@ -1,25 +1,37 @@
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+
+$body-bgcolor: #d5dee2;
+$heading-bgcolor: #8591d5;
+$todoButton-bgcolor: #8591d5;
+
 body {
-    background-color: #d5dee2;
+    background-color: $body-bgcolor;
+
+    p {
+        margin-bottom: 30px;
+    }
 }
 
-h4 {
-    margin-bottom: 35px;
+h1 {
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+    background-color: $heading-bgcolor;
+    margin: 0 0 25px 0;
+    padding: 10px 0 10px 0;
+    font-size: 50px;
 }
 
-.todoContainer {
-    width: 85%;
-    background-color: #fff;
-}
-
-.todoButton {
-    margin-top: 15px;
-    margin-right: 15px;
-}
 
 .todoDone {
     text-decoration: line-through;
 }
 
+.btn {
+    background-color: #8591d5;
+}
+/************************************************
+    Animation
+************************************************/
 .example-enter {
   opacity: 0.01;
 }

@@ -89,8 +89,8 @@ export default class App extends Component {
         return (
             <div>
                 <h1 className='text-center'>B4-I-4Get</h1>
-                <h4 className='text-center'>Saves your todo list in your local storage</h4>
-                <div className="container" styleName="todoContainer">
+                <div className='container'>
+                    <p className='text-center'>B4-I-4Get saves your todos to your localStorage so that refreshing the page won't delete your todos.</p>
                     <SearchBar
                         submit={this.handleOnSubmit.bind(this)}
                         val={this.state.term}

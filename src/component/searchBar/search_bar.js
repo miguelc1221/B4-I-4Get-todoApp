@@ -10,7 +10,7 @@ export default (props) => {
                 onChange={props.change}
                 placeholder="Add todo"/>
             <span className="input-group-btn">
-                <button className="btn btn-success" styleName="todoButton">Add todo</button>
+                <button className="btn btn-default">Add todo</button>
             </span>
         </form>
     )
