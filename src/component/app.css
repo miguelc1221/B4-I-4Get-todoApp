@@ -1,0 +1,21 @@
+body {
+    background-color: #dfe6e9;
+}
+
+h1 {
+    text-align: center;
+}
+
+.todoContainer {
+    width: 85%;
+    background-color: #fff;
+}
+
+.todoButton {
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.todoDone {
+    text-decoration: line-through;
+}

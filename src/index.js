@@ -2,10 +2,10 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { Router, browserHistory } from 'react-router';
 
-import routes from './routes.js';
 import reducers from './reducers';
+
+import App from './component/app';
 
 const store = createStore(
     reducers
@@ -13,7 +13,7 @@ const store = createStore(
 
 render(
     <Provider store={store}>
-        <Router history={browserHistory} routes={routes}/>
+        <App />
     </Provider>,
     document.getElementById('root')
 );
