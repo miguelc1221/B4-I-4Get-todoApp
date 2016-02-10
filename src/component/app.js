@@ -25,14 +25,13 @@ export default class App extends Component {
 
     handleOnSubmit(e) {
         e.preventDefault();
-        var todoLength = this.state.todos.length;
-        var task = 'task' + todoLength;
-        var concatState = this.state.todos.concat({ id: task, todo: this.state.term })
+        var id = Math.random() * (100000 - 1) + 1
+        var concatState = this.state.todos.concat({ id, todo: this.state.term })
 
         if(this.state.term) {
             this.setState({ todos: concatState });
 
-            localStorage.setItem(task,this.state.term);
+            localStorage.setItem(id,this.state.term);
             this.setState({ term: ''});
         }
     }
@@ -66,7 +65,7 @@ export default class App extends Component {
         }
     }
     render() {
-        const list = this.state.todos.map((todo) => {
+        const list = this.state.todos.map((todo, ind) => {
             return (
                 <li key={todo.id}>
                     <div className="checkbox list-group-item">
