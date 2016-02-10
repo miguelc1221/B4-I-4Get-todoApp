@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './app.css';
 
 import SearchBar from './searchBar/search_bar';
@@ -27,10 +28,13 @@ export default class App extends Component {
         var todoLength = this.state.todos.length;
         var task = 'task' + todoLength;
         var concatState = this.state.todos.concat({ id: task, todo: this.state.term })
-        this.setState({ todos: concatState });
 
-        localStorage.setItem(task,this.state.term);
-        this.setState({ term: ''});
+        if(this.state.term) {
+            this.setState({ todos: concatState });
+
+            localStorage.setItem(task,this.state.term);
+            this.setState({ term: ''});
+        }
     }
 
     handleRemoveTodo(id) {
@@ -85,7 +89,8 @@ export default class App extends Component {
 
         return (
             <div>
-                <h1>B4-I-4Get</h1>
+                <h1 className='text-center'>B4-I-4Get</h1>
+                <h4 className='text-center'>Saves your todo list in your local storage</h4>
                 <div className="container" styleName="todoContainer">
                     <SearchBar
                         submit={this.handleOnSubmit.bind(this)}
@@ -93,7 +98,12 @@ export default class App extends Component {
                         change={this.handleOnChange.bind(this)}/>
                     <hr />
                     <ul className="list-unstyled list-group">
-                        {list}
+                        <ReactCSSTransitionGroup
+                            transitionName="example"
+                            transitionEnterTimeout={500}
+                            transitionLeaveTimeout={300}>
+                            {list}
+                        </ReactCSSTransitionGroup>
                     </ul>
                 </div>
 
@@ -101,8 +111,3 @@ export default class App extends Component {
         )
     }
 }
-
-// value={val}
-// checked={todo.checkList.indexOf(val.toString()) !== -1}
-// onChange={this.selectedValueChange}
-// onClick={this.handleUpdateOnClick.bind(null,val)}

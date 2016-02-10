@@ -1,13 +1,17 @@
 {
-  "name": "my-react-boilerplate",
+  "name": "B4-I-4Get",
   "version": "1.0.0",
-  "description": "Starter package for React/React-Router/Redux/Express",
+  "engines": {
+    "node": "5.0.0"
+  },
+  "description": "Todo App",
   "scripts": {
     "clean": "rimraf dist",
     "build:webpack": "NODE_ENV=production webpack -p --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
     "start": "node server.js",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "postinstall": "npm run build"
   },
   "repository": "",
   "author": "Miguel Correa (http://github.com/miguelc1221)",
@@ -37,10 +41,9 @@
     "webpack-hot-middleware": "^2.6.4"
   },
   "dependencies": {
-    "lodash": "^4.3.0",
     "react": "^0.14.7",
-    "react-dom": "^0.14.7",
-    "react-redux": "^4.4.0",
-    "redux": "^3.3.0"
+    "react-addons-css-transition-group": "^0.14.7",
+    "react-addons-transition-group": "^0.14.7",
+    "react-dom": "^0.14.7"
   }
 }

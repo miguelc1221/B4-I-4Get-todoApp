@@ -1,9 +1,9 @@
 body {
-    background-color: #dfe6e9;
+    background-color: #d5dee2;
 }
 
-h1 {
-    text-align: center;
+h4 {
+    margin-bottom: 35px;
 }
 
 .todoContainer {
@@ -18,4 +18,22 @@ h1 {
 
 .todoDone {
     text-decoration: line-through;
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
